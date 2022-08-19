@@ -83,7 +83,7 @@ public class Jugadores {
 
     @Override
     public String toString() {
-        return "Jugadores{" + "nombre=" + nombre + ", cartas=" + cartas + ", torres=" + torres + '}';
+        return "Jugadores :" + "nombre del Jugador =" + nombre + ", cartas=" + cartas + ", torres=" + torres + '}';
     }
     
 }

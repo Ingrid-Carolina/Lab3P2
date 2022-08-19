@@ -116,25 +116,25 @@ static Scanner lea = new Scanner(System.in);
                         String exit = "";
                         for (Object temp : jugador) {
                             if (temp instanceof Jugadores) {
-                                exit += jugador.indexOf(temp) + "-" + temp;
+                                exit += "posicion del Jugador: "+jugador.indexOf(temp) + "-" + temp;
                             }
 
                         }
                         System.out.println(exit);
-                        System.out.println("Ingrese el indice del jugador a añadir: ");
-                        int ana = lea.nextInt();
+                        System.out.println("Ingrese el posicion  del jugador a añadir: ");
+                        int pos = lea.nextInt();
 
                         exit = "";
                         for (Object temp : cartas) {
                             if (temp instanceof Cartas) {
-                                exit += cartas.indexOf(temp) + "-" + temp;
+                                exit += "posicion del carta: "+cartas.indexOf(temp) + "-" + temp;
                             }
 
                         }
                         System.out.println(exit);
-                        System.out.println("El indice de la Carta que quiere añadir: ");
+                        System.out.println("El posicion de la Carta que quiere añadir: ");
                         int in = lea.nextInt();
-                        ((Jugadores) jugador.get(ana)).getCartas().add((Cartas) cartas.get(in));
+                        ((Jugadores) jugador.get(pos)).getCartas().add((Cartas) cartas.get(in));
                     } else {
                         System.out.println("Hay un error");
                     }
@@ -148,20 +148,20 @@ static Scanner lea = new Scanner(System.in);
                     String exit = "";
                     for (Object temp : jugador) {
                         if (temp instanceof Jugadores) {
-                            exit += jugador.indexOf(temp) + " - " + temp + "\n";
+                            exit += "posicion del jugador: "+ jugador.indexOf(temp) + " - " + temp + "\n";
                         }
                     }
                     System.out.println(exit);
-                    System.out.println("Ingrese el indice del jugador a añadir: ");
+                    System.out.println("Ingrese el posicion del jugador a añadir: ");
                     int ana = lea.nextInt();
                     exit = "";
                     for (Object temp : torres) {
                         if (temp instanceof Torres) {
-                            exit += torres.indexOf(temp) + "-" + temp + "\n";
+                            exit += "posicion de la Torre: "+torres.indexOf(temp) + "-" + temp + "\n";
                         }
                     }
                     System.out.println(exit);
-                    System.out.println("El indice de Torres que quiere añadir: ");
+                    System.out.println("El posicion de Torres que quiere añadir: ");
                     int in = lea.nextInt();
                     ((Jugadores) jugador.get(ana)).getTorres().add((TorreArquera) torres.get(in));
                     break;
@@ -174,7 +174,7 @@ static Scanner lea = new Scanner(System.in);
                     String exit = "";
                     for (Object temp : jugador) {
                         if (temp instanceof Jugadores) {
-                            exit += jugador.indexOf(temp) + "-" + temp;
+                            exit += "posicion del jugador: "+ jugador.indexOf(temp) + "-" + temp;
                         }
 
                     }
@@ -185,7 +185,7 @@ static Scanner lea = new Scanner(System.in);
                     exit = "";
                     for (Object temp : torres) {
                         if (temp instanceof Torres) {
-                            exit += torres.indexOf(temp) + "-" + temp + "\n";
+                            exit += "posicion de la torre: "+ torres.indexOf(temp) + "-" + temp + "\n";
                         }
 
                     }
@@ -203,7 +203,7 @@ static Scanner lea = new Scanner(System.in);
                         String exit = "";
                         for(Object temp: jugador ){
                             if(temp instanceof Jugadores){
-                                exit += jugador.indexOf(temp) + "- " + temp +"\n";
+                                exit += "posicion del jugador: "+ jugador.indexOf(temp) + "- " + temp +"\n";
                             }
                         }
                         System.out.println(exit);
@@ -225,7 +225,7 @@ static Scanner lea = new Scanner(System.in);
                         String exit = "";
                         for(Object temp: jugador ){
                             if(temp instanceof Jugadores){
-                                exit += jugador.indexOf(temp) + "- " + temp +"\n";
+                                exit += "posicion del jugador: "+ jugador.indexOf(temp) + "- " + temp +"\n";
                             }
                         }
                         System.out.println(exit);
@@ -243,53 +243,69 @@ static Scanner lea = new Scanner(System.in);
                         String exit = "";
                         for(Object temp: jugador ){
                             if(temp instanceof Jugadores){
-                                exit += jugador.indexOf(temp) + "- " + temp +"\n";
+                                exit += "posicion del jugador: "+ jugador.indexOf(temp) + "- " + temp +"\n";
                             }
                         }
                         System.out.println(exit);
                         System.out.println("posicion del Jugador que listar: ");
                         int pos=lea.nextInt();
-                        String temp = jugador.indexOf(pos)+"-"+((Jugadores)jugador.get(pos)).getNombre();
+                        String temp = "posicion del jugador: "+ jugador.indexOf(pos)+"-"+((Jugadores)jugador.get(pos)).getNombre();
                          
                     }
                     break;
                 }//fin del case 7
 
                 case 8: {
-                    if(jugador.isEmpty()){
-                        System.out.println("No Existe Jugador");
-                    }else{
+                    
                         String exit = "";
                         for(Object temp: jugador ){
                             if(temp instanceof Jugadores){
-                                exit += jugador.indexOf(temp) + "- " + temp +"\n";
+                                exit += "posicion del jugador: "+ jugador.indexOf(temp) + "- " + temp +"\n";
                             }
                         }
                         System.out.println(exit);
                         
-                    }
+                    
                     break;
                 }//fin del case 8
 
                 case 9: {
-                    if(jugador.isEmpty()){
-                        System.out.println("No Existe Jugador");
-                    }else{
+                    
                         String exit = "";
                         for(Object temp: jugador ){
                             if(temp instanceof Jugadores){
-                                exit += jugador.indexOf(temp) + "- " + temp +"\n";
+                                exit += "posicion del jugador: "+ jugador.indexOf(temp) + "- " + temp +"\n";
                             }
                         }
                         System.out.println(exit);
                         System.out.println("posicion del Jugador que listar: ");
                         int pos=lea.nextInt();
                         System.out.println(((Jugadores)jugador.get(pos)).lA());
-                    }
+                        System.out.println();
+                        System.out.println("la posicion de las Torres de arqueras que queres eliminar:");
+                        int pos2 = lea.nextInt();
+                        ((Jugadores)jugador.get(pos2)).getTorres().remove(pos2);
+                    
                     break;
                 }//fin del case 9
 
                 case 10: {
+                   
+                        String exit = "";
+                        for(Object temp: jugador ){
+                            if(temp instanceof Jugadores){
+                                exit += "posicion del jugador: "+ jugador.indexOf(temp) + "- " + temp +"\n";
+                            }
+                        }
+                        System.out.println(exit);
+                        System.out.println("posicion del Jugador que listar: ");
+                        int pos=lea.nextInt();
+                        System.out.println(((Jugadores)jugador.get(pos)).lR());
+                        System.out.println();
+                        System.out.println("la posicion de las Torres del Rey que queres eliminar:");
+                        int pos2 = lea.nextInt();
+                        ((Jugadores)jugador.get(pos2)).getTorres().remove(pos2);
+                    
                     break;
                 }//fin del case 10
 
@@ -297,7 +313,7 @@ static Scanner lea = new Scanner(System.in);
                     String exit = "";
                         for(Object temp: torres ){
                             if(temp instanceof Torres){
-                                exit += torres.indexOf(temp) + "-" + temp +"\n";
+                                exit +=  "posicion de la torre: "+ torres.indexOf(temp) + "-" + temp +"\n";
                             }
                         }
                         System.out.println(exit);
@@ -308,7 +324,7 @@ static Scanner lea = new Scanner(System.in);
                     String exit = "";
                         for(Object temp: cartas ){
                             if(temp instanceof Cartas){
-                                exit += cartas.indexOf(temp) + "-" + temp +"\n";
+                                exit += "posicion de la cartas: "+ cartas.indexOf(temp) + "-" + temp +"\n";
                             }
                         }
                         System.out.println(exit);
@@ -325,7 +341,7 @@ static Scanner lea = new Scanner(System.in);
                         String exit = "";
                         for (Object temp : jugador) {
                             if (temp instanceof Jugadores) {
-                                exit += jugador.indexOf(temp) + "-" + temp;
+                                exit += "posicion del jugador: "+ jugador.indexOf(temp) + "-" + temp;
                             }
                         }
                         System.out.println(exit);
